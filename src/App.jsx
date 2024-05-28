@@ -1,9 +1,15 @@
+import { Route, Routes } from 'react-router-dom';
+import { Home } from './pages/Home';
+import { About } from './pages/About';
 import './index.css'; 
 
 function App() {
 
   return (
-    <h1>Hell2o</h1>
+    <Routes>
+      <Route path="/" element={<Home />}/>
+      <Route path="/About" element={<About />}/>
+    </Routes>
   )
 }
 
