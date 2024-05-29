@@ -6,7 +6,6 @@ import './index.css';
 import Layout from './components/Navigation/Layout/Layout';
 
 function App() {
-
   return (
     <>
       <Routes>
