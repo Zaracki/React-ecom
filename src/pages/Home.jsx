@@ -40,7 +40,7 @@ export function Home() {
   }
 
   return (
-    <div className="container mx-auto flex flex-col items-center">
+    <div className="container mx-auto flex flex-col items-center flex-1">
       <div className="flex justify-center mt-6">
         <input 
           type="text" 
