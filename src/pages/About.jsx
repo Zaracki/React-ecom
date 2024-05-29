@@ -1,5 +1,8 @@
 export function About() {
   return (
-    <h1>About</h1>
+    <div className="flex-1">
+      <h1>About</h1>    
+    </div>
+
   )
 }
