@@ -50,7 +50,7 @@ export function Home() {
           onChange={handleSearchChange}
         />
       </div>
-      <div className="App grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 justify-center items-center min-h-screen">
+      <div className="App grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 justify-center items-center">
         {renderData()}
       </div>
     </div>

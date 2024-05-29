@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const Card = ({ data }) => {
   return (
-    <div className="flex flex-col h-full max-w-sm rounded overflow-hidden shadow-lg bg-white m-4">
+    <div className="flex flex-col h-full max-w-sm rounded overflow-hidden shadow-lg bg-white m-4 max-h-96">
       <img className="w-full h-48 object-cover" src={data.image.url} alt="Product" />
       <div className="flex flex-col justify-between flex-grow p-6">
         <div>
