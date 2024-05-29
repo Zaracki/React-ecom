@@ -1,24 +1,29 @@
 import { useEffect, useState } from "react";
-import { apiBaseUrl } from "../../common/Constants";
 
-
-export function fetchApi() {
+export function useFetch(url) {
   const [data, setData] = useState([]);
-
+  const [isLoading, setIsLoading] = useState(false);
+  const [hasError, setHasError] = useState(false);
 
   useEffect(() => {
     async function getData(url) {
       try {
+        setIsLoading(true);
         const response = await fetch(url);
         const json = await response.json();
         setData(json);
         console.log(json);
         return json;
-      } catch (error){
+      } catch (error) {
+        setHasError(true);
         console.error(error);
+      } finally {
+        setIsLoading(false);
       }
     }
 
-    getData(apiBaseUrl + "/online-shop")
-  }, [])
+    getData(url);
+  }, [url]);
+
+  return { data, isLoading, hasError };
 }
