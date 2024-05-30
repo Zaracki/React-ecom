@@ -1,9 +1,10 @@
-import { useState } from "react";
 import { useParams } from "react-router-dom";
 import { useFetch } from "../components/hooks/useFetch";
 import { apiBaseUrl } from "../common/Constants";
 import { useCartStore } from "../components/CartStore";
-import DiscountDisplay from "../components/DiscountDisplay";
+import ProductImage from "../components/product-page/ProductImage";
+import ProductDetails from "../components/product-page/ProductDetails";
+import AddToCartButton from "../components/product-page/AddToCartButton";
 
 export function ProductPage() {
   const { id } = useParams();
@@ -38,23 +39,16 @@ export function ProductPage() {
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100">
       <div className="max-w-4xl bg-white rounded-xl overflow-hidden shadow-lg flex">
-        <div className="md:flex-shrink-0">
-          <img className="h-auto w-full object-cover md:w-96" src={image.url} alt="Product Image Placeholder" />
-        </div>
+        <ProductImage imageUrl={image.url} altText="Product Image Placeholder" />
         <div className="p-8">
-          <div className="uppercase tracking-wide text-sm text-indigo-500 font-semibold">{title}</div>
-          <p className="mt-2 text-gray-500">{description}</p>
-          <div className="mt-4">
-            <DiscountDisplay price={price} discountedPrice={discountedPrice} />
-          </div>
-          <div className="mt-4">
-            {tags.map(tag => (
-              <a key={tag} href="#" className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2">#{tag}</a>
-            ))}
-          </div>
-          <div className="mt-4">
-            <button onClick={handleAddToCart} className="inline-block bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Buy Now</button>
-          </div>
+          <ProductDetails 
+            title={title} 
+            description={description} 
+            price={price} 
+            discountedPrice={discountedPrice} 
+            tags={tags} 
+          />
+          <AddToCartButton onAddToCart={handleAddToCart} />
         </div>
       </div>
     </div>
