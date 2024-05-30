@@ -29,9 +29,9 @@ export function Home() {
   }
 
   return (
-    <div className="container mx-auto flex flex-col items-center flex-1">
+    <main className="container mx-auto flex flex-col items-center flex-1">
       <SearchBar searchQuery={searchQuery} onSearchChange={handleSearchChange} />
       <CardList products={filteredData} />
-    </div>
+    </main>
   );
 }

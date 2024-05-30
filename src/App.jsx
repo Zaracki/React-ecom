@@ -5,6 +5,7 @@ import { Contact } from './pages/Contact';
 import { ProductPage } from './pages/ProductPage';
 import './index.css'; 
 import Layout from './components/Navigation/Layout/Layout';
+import { CheckoutSuccess } from './pages/CheckoutSuccess';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Route path="/Checkout" element={<Checkout />}/>
           <Route path="/Contact" element={<Contact />}/>
           <Route path="/ProductPage/:id" element={<ProductPage />}/>
+          <Route path="/CheckoutSuccess" element={<CheckoutSuccess />}/>
         </Route>
       </Routes>
     </>
