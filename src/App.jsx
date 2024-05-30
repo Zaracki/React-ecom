@@ -1,6 +1,6 @@
 import { Route, Routes } from 'react-router-dom';
 import { Home } from './pages/Home';
-import { About } from './pages/About';
+import { Checkout } from './pages/Checkout';
 import { Contact } from './pages/Contact';
 import { ProductPage } from './pages/ProductPage';
 import './index.css'; 
@@ -12,7 +12,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />}/>
-          <Route path="/About" element={<About />}/>
+          <Route path="/Checkout" element={<Checkout />}/>
           <Route path="/Contact" element={<Contact />}/>
           <Route path="/ProductPage/:id" element={<ProductPage />}/>
         </Route>
