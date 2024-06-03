@@ -14,7 +14,6 @@ export function Checkout() {
     clearCart: state.clearCart,
   }));
 
-  // Function to calculate total quantity of a product in the cart
   const getTotalQuantity = (productId) => {
     return cart.reduce((total, product) => (product.id === productId ? total + 1 : total), 0);
   };
@@ -39,19 +38,17 @@ export function Checkout() {
   };
 
   const handlePlaceOrder = () => {
-    // Placeholder function for placing order
     clearCart(); // Clear the cart
-    navigate('/CheckoutSuccess'); // Navigate to CheckoutSuccess page
+    navigate('/CheckoutSuccess');
   };
 
-  // Create a new array of unique products with their quantities
   const uniqueProducts = Array.from(new Set(cart.map((product) => product.id))).map((productId) => ({
     ...cart.find((product) => product.id === productId),
     quantity: getTotalQuantity(productId),
   }));
 
   return (
-    <div className="mt-10 bg-gray-50 px-4 pt-8 lg:mt-0">
+    <main className="mt-10 bg-gray-50 px-4 pt-8 lg:mt-0 flex-1">
       <div className="px-4 pt-8">
         <p className="text-xl font-medium">Order Summary</p>
         <div className="mt-8 space-y-3 rounded-lg border bg-white px-2 py-4 sm:px-6">
@@ -74,6 +71,6 @@ export function Checkout() {
         )}
         <CartSummary totalPrice={getTotalPrice()} onPlaceOrder={handlePlaceOrder} cartEmpty={cart.length === 0} />
       </div>
-    </div>
+    </main>
   );
 }

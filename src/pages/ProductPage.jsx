@@ -33,7 +33,6 @@ export function ProductPage() {
       discountedPrice,
     };
     addToCart(productToAdd);
-    alert('Product added to cart!');
   };
 
   return (
