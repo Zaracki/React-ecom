@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import DiscountDisplay from './components/DiscountDisplay';
+import DiscountDisplay from '../DiscountDisplay';
 
 const Card = ({ data }) => {
   const { id, image, title, price, discountedPrice } = data;
