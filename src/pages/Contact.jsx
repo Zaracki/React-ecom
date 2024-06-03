@@ -31,6 +31,7 @@ export function Contact() {
     if (Object.keys(newErrors).length === 0) {
       console.log('Form submitted:', formData);
       setFormStatus({ success: 'Contact form sent', error: '' });
+      setFormData({ fullName: '', subject: '', email: '', body: '' });
     } else {
       setErrors(newErrors);
       setFormStatus({ success: '', error: 'Fill out required fields' });
