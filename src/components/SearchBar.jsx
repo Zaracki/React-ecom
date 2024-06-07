@@ -6,6 +6,7 @@ const SearchBar = ({ searchQuery, onSearchChange }) => (
       placeholder="Search by title..."
       value={searchQuery}
       onChange={onSearchChange}
+      aria-label="Search by title"
     />
   </div>
 );

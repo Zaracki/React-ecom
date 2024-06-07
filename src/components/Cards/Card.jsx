@@ -15,7 +15,7 @@ const Card = ({ data }) => {
         </div>
         <div className="mt-4">
           <Link to={`/ProductPage/${id}`}>
-            <button className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700">View</button>
+            <button className="bg-blue-700 text-white px-4 py-2 rounded hover:bg-blue-700">View</button>
           </Link>
         </div>
       </div>

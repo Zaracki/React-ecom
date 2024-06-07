@@ -10,7 +10,7 @@ const DiscountDisplay = ({ price, discountedPrice }) => {
       {discount > 0 && (
         <>
           <span className="text-sm line-through text-gray-500 ml-2">${price.toFixed(2)}</span>
-          <span className="text-sm text-red-500 flex">({discountPercentage}% off)</span>
+          <span className="text-sm text-red-600 flex">({discountPercentage}% off)</span>
         </>
       )}
     </div>

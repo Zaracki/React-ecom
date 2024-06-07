@@ -41,7 +41,7 @@ export function Checkout() {
   };
 
   const handlePlaceOrder = () => {
-    clearCart(); // Clear the cart
+    clearCart();
     navigate('/CheckoutSuccess');
   };
 
@@ -53,7 +53,7 @@ export function Checkout() {
   return (
     <main className="mt-10 bg-gray-50 px-4 pt-8 lg:mt-0 flex-1">
       <div className="px-4 pt-8">
-        <p className="text-xl font-medium">Order Summary</p>
+        <h1 className="text-xl font-medium">Order Summary</h1>
         <div className="mt-8 space-y-3 rounded-lg border bg-white px-2 py-4 sm:px-6">
           {cart.length === 0 ? (
             <p className="text-center text-gray-500">No products in cart</p>

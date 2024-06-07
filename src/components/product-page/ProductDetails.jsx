@@ -16,7 +16,7 @@ const ProductDetails = ({ title, description, price, discountedPrice, tags, revi
         ))}
       </div>
       <div className="mt-4">
-        <h2 className="font-bold text-lg text-blue-500">Reviews</h2>
+        <h2 className="font-bold text-lg text-blue-700">Reviews</h2>
         {reviews.length > 0 ? (
           <ul className="mt-2 space-y-4">
             {reviews.map((review) => (
