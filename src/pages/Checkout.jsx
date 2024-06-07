@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useCartStore } from '../components/CartStore';
 import CartItem from './../components/Cart/CartItem';
@@ -7,9 +7,10 @@ import CartSummary from '../components/Cart/CartSummary';
 export function Checkout() {
   const navigate = useNavigate();
 
-  const { cart, addToCart, removeFromCart, clearCart } = useCartStore((state) => ({
+  const { cart, addToCart, decrementFromCart, removeFromCart, clearCart } = useCartStore((state) => ({
     cart: state.cart,
     addToCart: state.addToCart,
+    decrementFromCart: state.decrementFromCart,
     removeFromCart: state.removeFromCart,
     clearCart: state.clearCart,
   }));
@@ -31,8 +32,10 @@ export function Checkout() {
   };
 
   const handleDecrement = (productId) => {
-    const product = cart.find((product) => product.id === productId);
-    if (product) {
+    const quantity = getTotalQuantity(productId);
+    if (quantity > 1) {
+      decrementFromCart(productId);
+    } else {
       removeFromCart(productId);
     }
   };
@@ -66,10 +69,9 @@ export function Checkout() {
             ))
           )}
         </div>
-        {!cart.length === 0 && (
+        {cart.length !== 0 && (
           <CartSummary totalPrice={getTotalPrice()} onPlaceOrder={handlePlaceOrder} />
         )}
-        <CartSummary totalPrice={getTotalPrice()} onPlaceOrder={handlePlaceOrder} cartEmpty={cart.length === 0} />
       </div>
     </main>
   );
