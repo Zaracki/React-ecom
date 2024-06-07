@@ -21,7 +21,7 @@ export function ProductPage() {
     return <div>Error: Product not found</div>;
   }
 
-  const { title, description, image, price, discountedPrice, tags } = data.data;
+  const { title, description, image, price, discountedPrice, tags, reviews } = data.data;
 
   const handleAddToCart = () => {
     const productToAdd = {
@@ -45,7 +45,8 @@ export function ProductPage() {
             description={description} 
             price={price} 
             discountedPrice={discountedPrice} 
-            tags={tags} 
+            tags={tags}
+            reviews={reviews}
           />
           <AddToCartButton onAddToCart={handleAddToCart} />
         </div>
