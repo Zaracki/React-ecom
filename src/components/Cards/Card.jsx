@@ -6,9 +6,9 @@ const Card = ({ data }) => {
   const { id, image, title, price, discountedPrice } = data;
 
   return (
-    <div className="max-w-sm rounded overflow-hidden shadow-lg bg-white m-4">
-        <img className="w-full h-48 object-cover" src={image.url} alt={title} />
-      <div className="p-6 flex flex-col justify-between h-full">
+    <div className="max-w-sm rounded overflow-hidden shadow-lg bg-white m-4 flex flex-col h-full">
+      <img className="w-full h-48 object-cover" src={image.url} alt={title} />
+      <div className="p-6 flex flex-col justify-between flex-grow">
         <div>
           <h2 className="font-bold text-xl text-blue-500">{title}</h2>
           <DiscountDisplay price={price} discountedPrice={discountedPrice} />
