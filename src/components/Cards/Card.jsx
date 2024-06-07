@@ -7,12 +7,10 @@ const Card = ({ data }) => {
 
   return (
     <div className="max-w-sm rounded overflow-hidden shadow-lg bg-white m-4">
-      <Link to={`/ProductPage/${id}`}>
         <img className="w-full h-48 object-cover" src={image.url} alt={title} />
-      </Link>
       <div className="p-6 flex flex-col justify-between h-full">
         <div>
-          <Link to={`/ProductPage/${id}`} className="font-bold text-xl text-blue-500 hover:underline">{title}</Link>
+          <h2 className="font-bold text-xl text-blue-500">{title}</h2>
           <DiscountDisplay price={price} discountedPrice={discountedPrice} />
         </div>
         <div className="mt-4">
