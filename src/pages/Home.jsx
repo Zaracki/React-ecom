@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { apiUrl } from "../common/Constants";
 import { useFetch } from "../components/hooks/useFetch";
 import SearchBar from "../components/SearchBar";
-import CardList from "../components/cards/CardList";
+import ProductList from "../components/ProductList";
 import Loading from "../components/Loader";
 import ErrorMessage from '../components/ErrorMessage';
 
@@ -32,7 +32,7 @@ export function Home() {
     <main className="container mx-auto flex flex-col items-center flex-1">
       <h1 className="mt-5 mb-5 font-bold text-4xl md:text-5xl lg:text-7xl text-blue-500">Shop to you Drop</h1>
       <SearchBar searchQuery={searchQuery} onSearchChange={handleSearchChange} />
-      <CardList products={filteredData} />
+      <ProductList products={filteredData} />
     </main>
   );
 };
