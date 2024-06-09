@@ -1,4 +1,4 @@
-import Card from "./cards/Card";
+import Card from "./Cards/Card";
 
 const ProductList = ({ products }) => {
   if (products.length === 0) {
