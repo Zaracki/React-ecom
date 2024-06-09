@@ -15,7 +15,6 @@ export function useFetch(url) {
         }
         const json = await response.json();
         setData(json);
-        console.log(json);
         return json;
       } catch (error) {
         setHasError(true);
@@ -29,4 +28,4 @@ export function useFetch(url) {
   }, [url]);
 
   return { data, isLoading, hasError };
-}
+};

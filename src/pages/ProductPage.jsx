@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
 import { useFetch } from "../components/hooks/useFetch";
-import { apiBaseUrl } from "../common/Constants";
-import { useCartStore } from "../components/CartStore";
+import { apiUrl } from "../common/Constants";
+import { useCartStore } from "../components/hooks/useCartStore";
 import ProductImage from "../components/product-page/ProductImage";
 import ProductDetails from "../components/product-page/ProductDetails";
 import AddToCartButton from "../components/product-page/AddToCartButton";
@@ -11,7 +11,7 @@ import Loading from "../components/Loader";
 
 export function ProductPage() {
   const { id } = useParams();
-  const { data, isLoading, hasError } = useFetch(`${apiBaseUrl}/online-shop/${id}`);
+  const { data, isLoading, hasError } = useFetch(`${apiUrl}/${id}`);
 
   const { addToCart } = useCartStore();
 
@@ -56,4 +56,4 @@ export function ProductPage() {
       </div>
     </main>
   );
-}
+};

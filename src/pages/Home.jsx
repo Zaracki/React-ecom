@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { apiBaseUrl } from "../common/Constants";
+import { apiUrl } from "../common/Constants";
 import { useFetch } from "../components/hooks/useFetch";
 import SearchBar from "../components/SearchBar";
 import CardList from "../components/cards/CardList";
@@ -7,7 +7,7 @@ import Loading from "../components/Loader";
 import ErrorMessage from '../components/ErrorMessage';
 
 export function Home() {
-  const { data, isLoading, hasError } = useFetch(apiBaseUrl + "/online-shop");
+  const { data, isLoading, hasError } = useFetch(apiUrl);
   const [searchQuery, setSearchQuery] = useState('');
 
   const handleSearchChange = (e) => {
@@ -35,4 +35,4 @@ export function Home() {
       <CardList products={filteredData} />
     </main>
   );
-}
+};

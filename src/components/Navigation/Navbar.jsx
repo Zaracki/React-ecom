@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { useCartStore } from '../CartStore';
+import { useCartStore } from '../hooks/useCartStore';
 
 export default function Navbar() {
   const cart = useCartStore(state => state.cart);
@@ -43,4 +43,4 @@ export default function Navbar() {
       </div>
     </nav>
   );
-}
+};

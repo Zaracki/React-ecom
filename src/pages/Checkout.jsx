@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useCartStore } from '../components/CartStore';
+import { useCartStore } from '../components/hooks/useCartStore';
 import CartItem from './../components/cart/CartItem';
 import CartSummary from '../components/cart/CartSummary';
 
@@ -75,4 +75,4 @@ export function Checkout() {
       </div>
     </main>
   );
-}
+};
