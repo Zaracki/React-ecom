@@ -1,6 +1,6 @@
 import Card from "./Card";
 
-const CardList = ({ products }) => {
+export const CardList = ({ products }) => {
   if (products.length === 0) {
     return <div className="text-center mt-6">No results found</div>;
   };
@@ -13,5 +13,3 @@ const CardList = ({ products }) => {
     </div>
   );
 };
-
-export default CardList;

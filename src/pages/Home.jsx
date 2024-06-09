@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { apiUrl } from "../common/Constants";
 import { useFetch } from "../components/hooks/useFetch";
 import SearchBar from "../components/SearchBar";
-import CardList from "../components/cards/CardList";
+import { CardList } from "../components/cards/CardList";
 import Loading from "../components/Loader";
 import ErrorMessage from '../components/ErrorMessage';
 
