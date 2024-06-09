@@ -22,7 +22,7 @@ export const CartItem = ({ product, handleIncrement, handleDecrement, handleDele
           </svg>
         </button>
       </div>
-      <span className="delete-button cursor-pointer text-red-700 underline"onClick={() => handleDelete(product.id)} >
+      <span className="delete-button cursor-pointer text-red-700 underline mt-2 self-start"onClick={() => handleDelete(product.id)} >
         Delete
       </span>
     </div>
