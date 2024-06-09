@@ -56,4 +56,4 @@ export function ProductPage() {
       </div>
     </main>
   );
-}
+};

@@ -35,4 +35,4 @@ export function Home() {
       <CardList products={filteredData} />
     </main>
   );
-}
+};

@@ -15,4 +15,4 @@ export function CheckoutSuccess() {
       </div>
     </main>
   );
-}
+};
