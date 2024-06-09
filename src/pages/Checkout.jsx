@@ -1,8 +1,8 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useCartStore } from '../components/CartStore';
-import CartItem from './../components/Cart/CartItem';
-import CartSummary from '../components/Cart/CartSummary';
+import CartItem from './../components/cart/CartItem';
+import CartSummary from '../components/cart/CartSummary';
 
 export function Checkout() {
   const navigate = useNavigate();

@@ -1,3 +1,3 @@
-const Error = () => <div>Error...</div>;
+const ErrorMessage = ({ message }) => <div>{message}</div>;
 
-export default Error;
+export default ErrorMessage;
