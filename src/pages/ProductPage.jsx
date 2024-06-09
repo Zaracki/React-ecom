@@ -1,24 +1,26 @@
 import { useParams } from "react-router-dom";
 import { useFetch } from "../components/hooks/useFetch";
-import { apiBaseUrl } from "../common/Constants";
-import { useCartStore } from "../components/CartStore";
+import { apiUrl } from "../common/Constants";
+import { useCartStore } from "../components/hooks/useCartStore";
 import ProductImage from "../components/product-page/ProductImage";
 import ProductDetails from "../components/product-page/ProductDetails";
 import AddToCartButton from "../components/product-page/AddToCartButton";
+import Reviews from "../components/product-page/ProductReviews";
+import ErrorMessage from "../components/ErrorMessage";
+import Loading from "../components/Loader";
 
 export function ProductPage() {
   const { id } = useParams();
-  const { data, isLoading, hasError } = useFetch(`${apiBaseUrl}/online-shop/${id}`);
+  const { data, isLoading, hasError } = useFetch(`${apiUrl}/${id}`);
 
-  // Access addToCart from useCartStore
   const { addToCart } = useCartStore();
 
   if (isLoading) {
-    return <div>Loading...</div>;
+    return <Loading />;
   }
 
   if (hasError || !data || !data.data) {
-    return <div>Error: Product not found</div>;
+    return <ErrorMessage message="Error finding product" />
   }
 
   const { title, description, image, price, discountedPrice, tags, reviews } = data.data;
@@ -49,8 +51,9 @@ export function ProductPage() {
             reviews={reviews}
           />
           <AddToCartButton onAddToCart={handleAddToCart} />
+          <Reviews reviews={reviews} />
         </div>
       </div>
     </main>
   );
-}
+};

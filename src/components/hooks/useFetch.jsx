@@ -10,9 +10,11 @@ export function useFetch(url) {
       try {
         setIsLoading(true);
         const response = await fetch(url);
+        if(!response.ok) {
+          throw new Error('Network response was not ok');
+        }
         const json = await response.json();
         setData(json);
-        console.log(json);
         return json;
       } catch (error) {
         setHasError(true);
@@ -26,4 +28,4 @@ export function useFetch(url) {
   }, [url]);
 
   return { data, isLoading, hasError };
-}
+};

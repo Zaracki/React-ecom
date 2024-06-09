@@ -35,7 +35,6 @@ export function Contact() {
     } else {
       setErrors(newErrors);
       setFormStatus({ success: '', error: 'Fill out required fields' });
-      console.log('Please correct the errors in the form');
     }
   };
 
@@ -57,7 +56,7 @@ export function Contact() {
               {errors[field] && <p className="text-red-500 text-sm">{errors[field]}</p>}
             </div>
           ))}
-          <button type="submit" className="w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded relative">
+          <button type="submit" className="w-full bg-blue-700 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded relative">
             Submit
           </button>
           {formStatus.success && <p className="text-green-500 text-sm mt-2">{formStatus.success}</p>}
@@ -66,4 +65,4 @@ export function Contact() {
       </div>
     </main>
   );
-}
+};

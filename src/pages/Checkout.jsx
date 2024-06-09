@@ -1,15 +1,16 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useCartStore } from '../components/CartStore';
-import CartItem from './../components/Cart/CartItem';
-import CartSummary from '../components/Cart/CartSummary';
+import { useCartStore } from '../components/hooks/useCartStore';
+import CartItem from './../components/cart/CartItem';
+import CartSummary from '../components/cart/CartSummary';
 
 export function Checkout() {
   const navigate = useNavigate();
 
-  const { cart, addToCart, removeFromCart, clearCart } = useCartStore((state) => ({
+  const { cart, addToCart, decrementFromCart, removeFromCart, clearCart } = useCartStore((state) => ({
     cart: state.cart,
     addToCart: state.addToCart,
+    decrementFromCart: state.decrementFromCart,
     removeFromCart: state.removeFromCart,
     clearCart: state.clearCart,
   }));
@@ -31,14 +32,16 @@ export function Checkout() {
   };
 
   const handleDecrement = (productId) => {
-    const product = cart.find((product) => product.id === productId);
-    if (product) {
+    const quantity = getTotalQuantity(productId);
+    if (quantity > 1) {
+      decrementFromCart(productId);
+    } else {
       removeFromCart(productId);
     }
   };
 
   const handlePlaceOrder = () => {
-    clearCart(); // Clear the cart
+    clearCart();
     navigate('/CheckoutSuccess');
   };
 
@@ -50,7 +53,7 @@ export function Checkout() {
   return (
     <main className="mt-10 bg-gray-50 px-4 pt-8 lg:mt-0 flex-1">
       <div className="px-4 pt-8">
-        <p className="text-xl font-medium">Order Summary</p>
+        <h1 className="text-xl font-medium">Order Summary</h1>
         <div className="mt-8 space-y-3 rounded-lg border bg-white px-2 py-4 sm:px-6">
           {cart.length === 0 ? (
             <p className="text-center text-gray-500">No products in cart</p>
@@ -66,11 +69,10 @@ export function Checkout() {
             ))
           )}
         </div>
-        {!cart.length === 0 && (
+        {cart.length !== 0 && (
           <CartSummary totalPrice={getTotalPrice()} onPlaceOrder={handlePlaceOrder} />
         )}
-        <CartSummary totalPrice={getTotalPrice()} onPlaceOrder={handlePlaceOrder} cartEmpty={cart.length === 0} />
       </div>
     </main>
   );
-}
+};
