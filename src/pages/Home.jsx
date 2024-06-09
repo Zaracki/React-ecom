@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { apiUrl } from "../common/Constants";
+import { apiUrl } from "../common/constants";
 import { useFetch } from "../components/hooks/useFetch";
 import SearchBar from "../components/SearchBar";
 import ProductList from "../components/ProductList";
