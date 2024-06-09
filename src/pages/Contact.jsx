@@ -35,7 +35,6 @@ export function Contact() {
     } else {
       setErrors(newErrors);
       setFormStatus({ success: '', error: 'Fill out required fields' });
-      console.log('Please correct the errors in the form');
     }
   };
 
