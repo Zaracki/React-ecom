@@ -1,6 +1,6 @@
 import React from 'react';
 
-const CartItem = ({ product, handleIncrement, handleDecrement, handleDelete }) => (
+export const CartItem = ({ product, handleIncrement, handleDecrement, handleDelete }) => (
   <div className="flex flex-col rounded-lg bg-white sm:flex-row">
     <img
       className="m-2 h-24 w-28 rounded-md border object-cover object-center" src={product.image.url} alt={product.title}
@@ -28,5 +28,3 @@ const CartItem = ({ product, handleIncrement, handleDecrement, handleDelete }) =
     </div>
   </div>
 );
-
-export default CartItem;
