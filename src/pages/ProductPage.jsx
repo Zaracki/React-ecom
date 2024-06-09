@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
 import { useFetch } from "../components/hooks/useFetch";
-import { apiUrl } from "../common/constants";
+import { apiUrl } from "../common/Constants";
 import { useCartStore } from "../components/hooks/useCartStore";
 import ProductImage from "../components/product-page/ProductImage";
 import ProductDetails from "../components/product-page/ProductDetails";
