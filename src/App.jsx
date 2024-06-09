@@ -4,7 +4,7 @@ import { Checkout } from './pages/Checkout';
 import { Contact } from './pages/Contact';
 import { ProductPage } from './pages/ProductPage';
 import './index.css'; 
-import { Layout } from './components/navigation/Layout';
+import { Layout } from './components/Navigation/Layout';
 import { CheckoutSuccess } from './pages/CheckoutSuccess';
 
 function App() {
