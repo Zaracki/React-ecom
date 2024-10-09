@@ -35,13 +35,27 @@ Build out the following pages for an eCom store:
 
 ### Installing
 
-First, clone the repository to your local machine:
+1. Clone the repo:
+
+```bash
+git clone https://github.com/Zaracki/react-ecom.git
+```
+
+2. Install the dependencies:
 
 ```
 npm install
 ```
 
+3. Run development:
+
+```bash
+npm run dev
 ```
+
+4. Build the app:
+
+```bash
 npm run build
 ```
 
