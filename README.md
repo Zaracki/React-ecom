@@ -1,4 +1,4 @@
-# Shopdrop - Semester project 2
+# Shopdrop - JavaScript Frameworks CA
 
 ![image](src/images/shopdrop.png)
 
